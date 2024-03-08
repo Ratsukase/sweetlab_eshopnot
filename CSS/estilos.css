@@ -181,8 +181,8 @@ body{
 .py-lg-10{
     padding: 25px;
 }
-main{    
-    padding: 20px;
+main{
+    padding: 5em;
 }
 .btn{
     background-color: #48abd5;
@@ -205,6 +205,11 @@ main{
     text-align: left;
 }
 .container img{
+    max-height: 300px;
+    display:flex;
+    align-items: center;
+}
+.container col{
     max-height: 300px;
     display:flex;
     align-items: center;
@@ -247,4 +252,9 @@ main{
 }
 .col{
     padding: 20px;
+}
+.centrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
