@@ -182,7 +182,7 @@ body{
     padding: 25px;
 }
 main{
-    padding: 5em;
+    padding: 2em;
 }
 .btn{
     background-color: #48abd5;
@@ -257,4 +257,13 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.carousel-inner{ 
+    text-align: center; 
+}
+.carousel .item > img {
+    display: inline-block; 
+}
+.carousel-control-prev-icon{
+    color: #dd5271 !important;
 }
