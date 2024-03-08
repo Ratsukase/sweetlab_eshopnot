@@ -32,6 +32,7 @@ Barra de navegacion
 .navbar-brand img{
     display: inline-block;
     min-height: 50px;
+
 }
 .navbar .navbar-nav .nav-link ul li{
     list-style: none; 
@@ -42,7 +43,7 @@ Barra de navegacion
     align-items: center;
     text-align: center;
     display: inline-block;
-    padding: 25px 60px;
+    padding: 25px;
 }
 .navbar .navbar-nav .nav-link.activo{
     background-color: rgb(218, 56, 99)!important;
@@ -219,6 +220,13 @@ main{
     display:flex;
     align-items: center;
 }
+.btn a{
+    text-decoration: none;
+    color: #cde5f1;
+}
+.btn a:hover{
+    color:#61202e;
+}
 .btn:hover{
     background-color: #dd5271;
     border: 0px;
@@ -229,11 +237,17 @@ main{
 .footer{
     background-color: #ffaeb5;
     margin-top: auto;
+    color:#61202e;
+}
+.footer a{
+    color: #dd5271;
+    font-weight: bold;
 }
 .logo-foot{
     align-items: center;
     max-width: 200px;
 }
+.footer
 .subseccion{
     background-color: #dd5271;
     color:#fff;
