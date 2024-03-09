@@ -210,6 +210,12 @@ main{
     font-weight: bold;
     text-align: left;
 }
+.col h3{
+    color: #61202e;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
 .container img{
     max-height: 300px;
     display:flex;
@@ -291,4 +297,8 @@ main{
 }
 .col p{
     color: #61202e !important;
+}
+.cuadro{
+    background-color: rgba(255, 174, 181, 0.5);
+    border-radius: 20px;
 }
