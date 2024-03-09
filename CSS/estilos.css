@@ -14,7 +14,7 @@ Barra de navegacion
 .navbar{
     height: 120px;
     width: 100%;
-    background-image: url(/Multimedia/Imagenes/fondo_navbar.svg); 
+    background-image: url(../Multimedia/Imagenes/fondo_navbar.svg); 
     font-family: 'Shantell Sans';
     font-size: 20px;
     font-weight: bold;
