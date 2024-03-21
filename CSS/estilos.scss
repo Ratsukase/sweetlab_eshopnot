@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Shantell Sans';
+}
+html{
+    scroll-behavior: smooth;
+}
+// Paleta de colores//
+$rosa1: #dd5271;
+$rosaclaro: #f3dee0;
+$rosaclaro2: #ffced2;
+$rosaoscuro: #61202e;
+$rosatrans: #ff88a279 ;
+$azul:#48abd5;
+$rayas:     repeating-linear-gradient(
+    90deg,
+    #deecf5 20px,
+    #deecf5 40px,
+    #cde5f1 40px,
+    #cde5f1 60px
+);
+$azulclaro: #cde5f1;
+
+$c-beizer: cubic-beizer(.1,.22,.8,1.13);
+/*============
+Barra de navegacion
+==============*/
+.navbar{
+    height: 120px;
+    width: 100%;
+    background-image: url(../Multimedia/Imagenes/fondo_navbar.svg); 
+    font-family: 'Shantell Sans';
+    font-size: 20px;
+    font-weight: bold;
+    display:flex;
+    justify-content: space-between;
+    padding: 20px!important;
+}
+.navbar-brand{
+    background: none;
+}
+.navbar-collapse{
+    display: flex;
+    justify-content: flex-end;
+}
+.navbar-brand img{
+    display: inline-block;
+    min-height: 50px;
+}
+.navbar .navbar-nav .nav-link ul li{
+    list-style: none; 
+    display: inline-block;
+}
+.navbar .navbar-nav .nav-link a{
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    padding: 25px;
+}
+.navbar .navbar-nav .nav-link.activo{
+    background-color: $rosa1!important;
+    border-radius: 40px;
+    color: $rosaclaro;
+}
+.navbar-toggler-icon{
+    color:$rosa1!important;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 0.6em;
+}
+.navbar .navbar-brand {
+    padding: 0 0.6em;
+}
+@media only screen and (min-width: 992px) {
+    .navbar {
+    padding: 0;
+}
+.navbar .navbar-nav .nav-link {
+    padding: 1em 0.7em;
+}
+.navbar .navbar-brand {
+    padding: 0 0.8em;
+}
+}
+.navbar .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1em;
+    background-color: $rosatrans;
+    border-radius: 40px;
+}
+.navbar .navbar-nav .nav-link:hover {
+    background-color: rgba(218, 56, 99,0.5);
+    border-radius: 40px;
+    transition: all 0.6s ease 0s;
+    color: $rosaoscuro;
+}
+
+.navbar-toggler {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: .5s ease-in-out;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    position: relative;
+}
+
+.navbar-toggler span {
+    margin: 0;
+    padding: 0;
+}
+
+.toggler-icon {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: $rosaoscuro;
+    border-radius: 1px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+.middle-bar {
+    margin-top: 0px;
+}
+
+/* State when the navbar is collapsed */
+.navbar-toggler.collapsed .top-bar {
+    position: absolute;
+    top: 0px;
+    transform: rotate(0deg);
+}
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    filter: alpha(opacity=100);
+}
+.navbar-toggler.collapsed .bottom-bar {
+    position: absolute;
+    top: 20px;
+    transform: rotate(0deg);
+}
+
+/* when navigation is clicked */
+.navbar-toggler .top-bar {
+    top: inherit;
+    transform: rotate(135deg);
+    align-items: right;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    top: inherit;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    top: inherit;
+    transform: rotate(-135deg);
+}
+
+/* Color of 3 lines */
+
+.navbar-toggler.collapsed .toggler-icon {
+    background: $rosa1;
+}
+/*============
+Fondo a rayas
+==============*/
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background: $rayas
+}
+.py-lg-10{
+    padding: 25px;
+}
+main{
+    padding: 2em;
+}
+.btn{
+    background-color: $azul;
+    border: 0px;
+    border-radius: 20px;
+    color:$azulclaro;
+    font-weight: bold;
+}
+.bg-primary{
+    background-color: $rosatrans!important;
+    border-radius: 20px;
+    padding: 10px 3%;
+}
+.bg-primary p{
+    color: $rosaoscuro;
+}
+.col h1{
+    color: $rosa1!important;
+    font-weight: bold;
+    text-align: left;
+}
+.col h2{
+    color: $rosa1!important;
+    font-weight: bold;
+    text-align: left;
+}
+.col h3{
+    color: $rosa1;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+}
+.container img{
+    max-height: 300px;
+    display:flex;
+    align-items: center;
+}
+.container col{
+    max-height: 300px;
+    display:flex;
+    align-items: center;
+}
+.btn a{
+    text-decoration: none;
+    color: $azulclaro;
+}
+.btn a:hover{
+    color:$rosaoscuro;
+}
+.btn:hover{
+    background-color: $rosa1;
+    border: 0px;
+    border-radius: 20px;
+    color:$rosaclaro2;
+    font-weight: bold;
+}
+.footer{
+    background-color: $rosaclaro2;
+    margin-top: auto;
+    color:$rosaoscuro;
+}
+.footer a{
+    color: $rosa1;
+    font-weight: bold;
+}
+.logo-foot{
+    align-items: center;
+    max-width: 200px;
+}
+.subseccion{
+    background-color: $rosa1;
+    color:#fff;
+    border-radius: 20px;
+    padding: 0.5em;
+    font-weight: bold;
+    text-align: center;
+}
+.card{
+    background-color: $rosaclaro;
+    border-radius: 20px;
+    border-color: $rosaclaro2;
+    border-width: 6px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card h5{
+    color: $rosa1;
+    font-weight: bold;
+}
+.card p{
+    color: $rosaoscuro;
+}
+.col{
+    padding: 20px;
+}
+.centrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.d-block{
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(100%);
+}
+.col p{
+    color: $rosaoscuro !important;
+}
+.cuadro{
+    background-color: $rosatrans;
+    border-radius: 20px;
+}
+.flip-card{
+    width: 100%;
+    height: 400px;
+
+    &-inner{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 20px rgba(#000,0.2);
+        border-radius: 28px;
+        text-align: center;
+        transition: all 550ms cubic-bezier(.1,.22,.8,1.13);
+        transform-style: preserve-3d;
+    }
+    &-front, &-back{
+        width: 100%;
+        height: 100%;
+        border-radius: 28px;
+        position: absolute;
+        backface-visibility: hidden;
+    }
+    &-front{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &-back{
+        font-size: 1.25rem;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        padding: 32px;
+        background-color: $rosaclaro2;
+        transform: rotateY(180deg);
+    }
+    &:hover .flip-card-inner{
+        transform: rotateY(-180deg);
+    }
+}
