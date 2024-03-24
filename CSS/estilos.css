@@ -84,7 +84,7 @@ Barra de navegacion
 .navbar .navbar-nav .nav-link {
   color: #fff;
   font-size: 1.1em;
-  background-color: rgba(255, 136, 162, 0.4745098039);
+  background-color: rgba(197, 79, 105, 0.4745098039);
   border-radius: 40px;
 }
 
@@ -185,6 +185,16 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   background: repeating-linear-gradient(90deg, #deecf5 20px, #deecf5 40px, #cde5f1 40px, #cde5f1 60px);
+  color: #61202e;
+}
+
+.site-map {
+  text-decoration: none;
+  line-height: 1.75em;
+}
+
+.site-map a:hover {
+  color: #48abd5 !important;
 }
 
 .py-lg-10 {
@@ -204,7 +214,7 @@ main {
 }
 
 .bg-primary {
-  background-color: rgba(255, 136, 162, 0.4745098039) !important;
+  background-color: rgba(253, 186, 201, 0.662745098) !important;
   border-radius: 20px;
   padding: 10px 3%;
 }
@@ -213,14 +223,15 @@ main {
   color: #61202e;
 }
 
-.col h1 {
+h1 {
   color: #dd5271 !important;
+  text-decoration: underline;
   font-weight: bold;
   text-align: left;
 }
 
 .col h2 {
-  color: #dd5271 !important;
+  color: #910221;
   font-weight: bold;
   text-align: left;
 }
@@ -232,10 +243,9 @@ main {
   text-align: center;
 }
 
-.container img {
-  max-height: 300px;
-  display: flex;
-  align-items: center;
+.site-map p {
+  font-size: 1em;
+  line-height: 0.75em;
 }
 
 .container col {
@@ -274,16 +284,18 @@ main {
 
 .logo-foot {
   align-items: center;
-  max-width: 200px;
+  justify-items: center;
+  max-width: 170px;
 }
 
 .subseccion {
   background-color: #dd5271;
   color: #fff;
   border-radius: 20px;
-  padding: 0.5em;
+  padding: 0.7em;
   font-weight: bold;
   text-align: center;
+  vertical-align: middle;
 }
 
 .card {
@@ -298,10 +310,6 @@ main {
 .card h5 {
   color: #dd5271;
   font-weight: bold;
-}
-
-.card p {
-  color: #61202e;
 }
 
 .col {
@@ -333,13 +341,13 @@ main {
 }
 
 .cuadro {
-  background-color: rgba(255, 136, 162, 0.4745098039);
+  background-color: rgba(253, 186, 201, 0.662745098);
   border-radius: 20px;
 }
 
 .flip-card {
   width: 100%;
-  height: 400px;
+  height: 450px;
 }
 .flip-card-inner {
   position: relative;
@@ -368,10 +376,29 @@ main {
   text-align: center;
   display: grid;
   place-items: center;
-  padding: 32px;
+  padding: 22px;
   background-color: #ffced2;
   transform: rotateY(180deg);
 }
 .flip-card:hover .flip-card-inner {
   transform: rotateY(-180deg);
+}
+
+.fondo {
+  background-color: rgba(253, 206, 211, 0.6980392157);
+  border-radius: 20px;
+}
+
+.h2 {
+  color: #61202e;
+}
+
+.list-unstyled {
+  color: #61202e;
+}
+
+.carousel img {
+  max-height: 350px;
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=estilos.css.map */
