@@ -236,13 +236,6 @@ h1 {
   text-align: left;
 }
 
-.col h3 {
-  color: #dd5271;
-  font-weight: bold;
-  font-size: 26px;
-  text-align: center;
-}
-
 .site-map p {
   font-size: 1em;
   line-height: 0.75em;
@@ -411,6 +404,6 @@ h1 {
 }
 
 .lab-img img {
-  max-height: 600px;
+  max-height: 400px;
   width: auto;
 }/*# sourceMappingURL=estilos.css.map */
