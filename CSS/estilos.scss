@@ -225,9 +225,14 @@ h1{
     text-align: left;
 }
 .col h2{
-    color: #910221;
+    color: $rosa1;
     font-weight: bold;
     text-align: left;
+}
+.col h3{
+    color: $rosa1;
+    font-weight: bold;
+    text-align: center;
 }
 .site-map p{
 font-size: 1em;

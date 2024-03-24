@@ -231,9 +231,15 @@ h1 {
 }
 
 .col h2 {
-  color: #910221;
+  color: #dd5271;
   font-weight: bold;
   text-align: left;
+}
+
+.col h3 {
+  color: #dd5271;
+  font-weight: bold;
+  text-align: center;
 }
 
 .site-map p {
