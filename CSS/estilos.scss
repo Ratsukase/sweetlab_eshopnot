@@ -189,6 +189,8 @@ body{
     min-height: 100vh;
     background: $rayas;
     color: $rosaoscuro;
+    scrollbar-width: thin;
+    scrollbar-color: $rosa1 $rosaclaro2;
 }
 .site-map{
     text-decoration: none;
@@ -288,10 +290,6 @@ line-height: 0.75em;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.card h5{
-    color: $rosa1;
-    font-weight: bold;
-}
 .col{
     padding: 20px;
 }
@@ -345,7 +343,7 @@ line-height: 0.75em;
         background-size: cover;
     }
     &-back{
-        font-size: 100%;
+        font-size: 20px;
         text-align: center;
         display: grid;
         place-items: center;
@@ -362,8 +360,9 @@ line-height: 0.75em;
     background-color: #fdced3b2;
     border-radius: 20px;
 }
-.h2{
-    color: #61202e;
+.flip-card-back h2{
+    color: $rosa1;
+    text-shadow: 1px 1px 2px $rosaoscuro;
 }
 .list-unstyled{
     color: $rosaoscuro;

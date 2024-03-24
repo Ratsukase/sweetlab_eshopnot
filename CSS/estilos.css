@@ -186,6 +186,8 @@ body {
   min-height: 100vh;
   background: repeating-linear-gradient(90deg, #deecf5 20px, #deecf5 40px, #cde5f1 40px, #cde5f1 60px);
   color: #61202e;
+  scrollbar-width: thin;
+  scrollbar-color: #dd5271 #ffced2;
 }
 
 .site-map {
@@ -306,11 +308,6 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.card h5 {
-  color: #dd5271;
-  font-weight: bold;
-}
-
 .col {
   padding: 20px;
 }
@@ -371,7 +368,7 @@ h1 {
   background-size: cover;
 }
 .flip-card-back {
-  font-size: 100%;
+  font-size: 20px;
   text-align: center;
   display: grid;
   place-items: center;
@@ -389,8 +386,9 @@ h1 {
   border-radius: 20px;
 }
 
-.h2 {
-  color: #61202e;
+.flip-card-back h2 {
+  color: #dd5271;
+  text-shadow: 1px 1px 2px #61202e;
 }
 
 .list-unstyled {
