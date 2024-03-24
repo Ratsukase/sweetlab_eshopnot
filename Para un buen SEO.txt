@@ -1,0 +1,9 @@
+Para un buen SEO he realizado las siguientes acciones en esta entrega:
+
+- He arreglado el uso de los h1, h2, h3 de tal manera que cada page contenga un solo h1, y ayuden a la jerarquía.
+- He puesto a cada página su meta description, keywords y title detalladas.
+- He reducido y adaptado mejor el peso de las imágenes ajustandolas más a la medida que deben tener.
+- He puesto a todas las imágenes el texto alternativo de forma que sea descriptivo de la propia imágen.
+- He creado variables para los colores y me he asegurado que la convinación de colores es suficientemente contrastada.
+- He incorporado el archivo del sitemap.
+- He incorporado el favicon en las paginas.
