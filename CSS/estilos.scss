@@ -14,7 +14,7 @@ $rosaclaro: #f3dee0;
 $rosaclaro2: #ffced2;
 $rosaoscuro: #61202e;
 $rosatrans: #c54f6979;
-$rosatrans2: #fdbac9a9;
+$rosatrans2: #ffd7dfd7;
 $azul:#48abd5;
 $rayas:     repeating-linear-gradient(
     90deg,
@@ -321,7 +321,7 @@ line-height: 0.75em;
 }
 .flip-card{
     width: 100%;
-    height: 450px;
+    height: 400px;
 
     &-inner{
         position: relative;
@@ -346,13 +346,14 @@ line-height: 0.75em;
         background-size: cover;
     }
     &-back{
-        font-size: 1.25rem;
+        font-size: 100%;
         text-align: center;
         display: grid;
         place-items: center;
-        padding: 22px;
+        padding: 20px;
         background-color: $rosaclaro2;
         transform: rotateY(180deg);
+        font-weight: 500;
     }
     &:hover .flip-card-inner{
         transform: rotateY(-180deg);
@@ -372,4 +373,13 @@ line-height: 0.75em;
     max-height: 350px;
     display: flex;
     align-items: center;
+}
+.flip-card-front img{
+    height: 100%;
+    width: auto;
+    align-items: center;
+}
+.lab-img img{
+    max-height: 600px;
+    width: auto;
 }
