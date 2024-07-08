@@ -1,13 +1,13 @@
 const products = [
-    { id: 1, name: 'Tarta nude', image: '../multimedia/imagenes/tartas/creaciones/nude.png', prices: { small: 30, medium: 45, large: 70 } },
-    { id: 2, name: 'Tarta Cartoon', image: '../multimedia/imagenes/tartas/creaciones/Cartoon.png', prices: { small: 55, medium: 75, large: 105 } },
-    { id: 3, name: 'Tarta sorpresa', image: '../multimedia/imagenes/tartas/creaciones/duotono sorpresa.png', prices: { small: 45, medium: 65, large: 80 } },
-    { id: 4, name: 'Tarta naranja chocolate', image: '../multimedia/imagenes/tartas/creaciones/naranja.png', prices: { small: 30, medium: 45, large: 70 } },
-    { id: 5, name: 'Semifrio mango', image: '../multimedia/imagenes/tartas/creaciones/entremet mango entero.png', prices: { small: 25, medium: 40, large: 60 } },
-    { id: 6, name: 'Semifrío frutos rojos', image: '../multimedia/imagenes/tartas/creaciones/entremet frutos rojos entero.png', prices: { small: 25, medium: 40, large: 60 } },
-    { id: 7, name: 'Dripcake', image: '../multimedia/imagenes/tartas/creaciones/dripcake.jpg', prices: { small: 59, medium: 68, large: 75 } },
-    { id: 8, name: 'Tarta unicornio', image: '../multimedia/imagenes/tartas/creaciones/unicornio.png', prices: { small: 45, medium: 65, large: 80 } },
-    { id: 9, name: 'Tarta red velvet', image: '../multimedia/imagenes/tartas/creaciones/redvelvet1.png', prices: { small: 30, medium: 45, large: 70 } },
+    { id: 1, name: 'Tarta nude', image: '../Multimedia/Imagenes/Tartas/creaciones/nude.png', prices: { small: 30, medium: 45, large: 70 } },
+    { id: 2, name: 'Tarta Cartoon', image: '../Multimedia/Imagenes/Tartas/creaciones/Cartoon.png', prices: { small: 55, medium: 75, large: 105 } },
+    { id: 3, name: 'Tarta sorpresa', image: '../Multimedia/Imagenes/Tartas/creaciones/duotono sorpresa.png', prices: { small: 45, medium: 65, large: 80 } },
+    { id: 4, name: 'Tarta naranja chocolate', image: '../Multimedia/Imagenes/Tartas/creaciones/naranja.png', prices: { small: 30, medium: 45, large: 70 } },
+    { id: 5, name: 'Semifrio mango', image: '../Multimedia/Imagenes/Tartas/creaciones/entremet mango entero.png', prices: { small: 25, medium: 40, large: 60 } },
+    { id: 6, name: 'Semifrío frutos rojos', image: '../Multimedia/Imagenes/Tartas/creaciones/entremet frutos rojos entero.png', prices: { small: 25, medium: 40, large: 60 } },
+    { id: 7, name: 'Dripcake', image: '../Multimedia/Imagenes/Tartas/creaciones/dripcake.jpg', prices: { small: 59, medium: 68, large: 75 } },
+    { id: 8, name: 'Tarta unicornio', image: '../Multimedia/Imagenes/Tartas/creaciones/unicornio.png', prices: { small: 45, medium: 65, large: 80 } },
+    { id: 9, name: 'Tarta red velvet', image: '../Multimedia/Imagenes/Tartas/creaciones/redvelvet1.png', prices: { small: 30, medium: 45, large: 70 } },
 ];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
