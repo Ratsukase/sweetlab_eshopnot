@@ -2,7 +2,7 @@ let productos = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Función para cargar productos desde el archivo JSON
-fetch("../Javascript/productos.json")
+fetch("./Javascript/productos.json")
     .then(response => {
         if (!response.ok) throw new Error('Error en la respuesta de la red');
         return response.json();
