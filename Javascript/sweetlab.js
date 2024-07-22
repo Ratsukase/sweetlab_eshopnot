@@ -1,17 +1,25 @@
+// Variable global para los productos y el carrito
 let productos = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-fetch("./Javascript/productos.json")
-    .then(response => response.json())
+// Función para cargar productos desde el archivo JSON
+fetch("../Javascript/productos.json")
+    .then(response => {
+        if (!response.ok) throw new Error('Error en la respuesta de la red');
+        return response.json();
+    })
     .then(data => {
         productos = data;
         loadProducts(productos);
+    })
+    .catch(error => {
+        console.error('Hubo un problema con la operación fetch:', error);
     });
-
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 $(document).ready(function() {
     updateCart();
 
+    // Mostrar u ocultar el modal del carrito
     $('#cart-button').click(function() {
         $('#cart-modal').toggle();
     });
@@ -20,22 +28,20 @@ $(document).ready(function() {
         $('#cart-modal').hide();
     });
 
-    $('#checkout-button').click(function() {
-        checkout();
-    });
+    $('#checkout-button').click(checkout);
 
-    $('#empty-cart-button').click(function() {
-        emptyCart();
-    });
+    $('#empty-cart-button').click(emptyCart);
 
     $('#thank-you-modal').on('hidden.bs.modal', function () {
         $('#cart-modal').hide();
     });
 });
 
+// Función para cargar productos en la página
 function loadProducts(products) {
     const productList = $('#product-list');
-    productList.empty(); // Limpiar el contenido previo
+    productList.empty(); 
+
     products.forEach(product => {
         const productCard = `
             <div class="col-md-4 mb-4">
@@ -59,10 +65,12 @@ function loadProducts(products) {
     $('.add-to-cart').click(function() {
         const productId = $(this).data('id');
         const selectedSize = $(`#size-${productId}`).val();
-        const product = products.find(p => p.id == productId);
-        const price = product.prices[selectedSize];
+        const product = productos.find(p => p.id == productId);
+        if (!product) return;
 
+        const price = product.prices[selectedSize];
         const cartItem = cart.find(item => item.id == productId && item.size == selectedSize);
+
         if (cartItem) {
             cartItem.quantity += 1;
         } else {
@@ -73,6 +81,7 @@ function loadProducts(products) {
     });
 }
 
+// Función para actualizar el carrito en la página
 function updateCart() {
     const cartItems = $('#cart-items');
     cartItems.empty();
@@ -82,6 +91,7 @@ function updateCart() {
     cart.forEach(item => {
         total += item.price * item.quantity;
         totalItems += item.quantity;
+
         const cartItem = `
             <li class="list-group-item">
                 ${item.name} - ${item.size} 
@@ -94,6 +104,7 @@ function updateCart() {
         cartItems.append(cartItem);
     });
 
+    // Manejo de eventos para los botones del carrito
     $('.remove-from-cart').click(function() {
         const productId = $(this).data('id');
         const size = $(this).data('size');
@@ -106,7 +117,7 @@ function updateCart() {
         const productId = $(this).data('id');
         const size = $(this).data('size');
         const cartItem = cart.find(item => item.id == productId && item.size == size);
-        cartItem.quantity += 1;
+        if (cartItem) cartItem.quantity += 1;
         updateCart();
     });
 
@@ -114,25 +125,30 @@ function updateCart() {
         const productId = $(this).data('id');
         const size = $(this).data('size');
         const cartItem = cart.find(item => item.id == productId && item.size == size);
-        if (cartItem.quantity > 1) {
-            cartItem.quantity -= 1;
-        } else {
-            const cartItemIndex = cart.findIndex(item => item.id == productId && item.size == size);
-            cart.splice(cartItemIndex, 1);
+        if (cartItem) {
+            if (cartItem.quantity > 1) {
+                cartItem.quantity -= 1;
+            } else {
+                const cartItemIndex = cart.findIndex(item => item.id == productId && item.size == size);
+                cart.splice(cartItemIndex, 1);
+            }
         }
         updateCart();
     });
 
-    $('#cart-count').text(totalItems); 
+    // Actualización de los totales del carrito
+    $('#cart-count').text(totalItems);
 
     const shippingCost = total > 100 ? 0 : 7.95;
     $('#cart-total').text(total.toFixed(2));
     $('#shipping-cost').text(shippingCost.toFixed(2));
     $('#total-pay').text((total + shippingCost).toFixed(2));
 
+    // Guardar el estado del carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+// Función para proceder al pago
 function checkout() {
     Swal.fire({
         title: '¿Estás seguro?',
@@ -157,6 +173,7 @@ function checkout() {
     });
 }
 
+// Función para vaciar el carrito
 function emptyCart() {
     cart.length = 0;
     updateCart();
