@@ -1,11 +1,21 @@
 let productos = [];
 
 fetch("./Javascript/productos.json")
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
     .then(data => {
         productos = data;
         loadProducts(productos);
+    })
+    .catch(error => {
+        console.error('Error fetching and parsing data:', error);
+        alert('Hubo un problema al cargar los productos. Por favor, inténtalo de nuevo más tarde.');
     });
+
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
