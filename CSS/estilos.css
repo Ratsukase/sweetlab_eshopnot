@@ -521,7 +521,7 @@ h1 {
 }
 
 #cart-modal {
-  background-color: #fabbfa; /* Cambia este valor al color que desees */
-  border-radius: 10px; /* Opcional: para redondear los bordes del carrito */
-  padding: 20px
+  background-color: #fff2ff; 
+  border-radius: 20px;
+  padding: 30px
 }
