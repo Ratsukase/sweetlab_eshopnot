@@ -1,9 +1,8 @@
-// Variable global para los productos y el carrito
 let productos = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Función para cargar productos desde el archivo JSON
-fetch("../Javascript/productos.json")
+fetch("./Javascript/productos.json")
     .then(response => {
         if (!response.ok) throw new Error('Error en la respuesta de la red');
         return response.json();
@@ -19,7 +18,7 @@ fetch("../Javascript/productos.json")
 $(document).ready(function() {
     updateCart();
 
-    // Mostrar u ocultar el modal del carrito
+
     $('#cart-button').click(function() {
         $('#cart-modal').toggle();
     });
@@ -104,7 +103,7 @@ function updateCart() {
         cartItems.append(cartItem);
     });
 
-    // Manejo de eventos para los botones del carrito
+    // Botones del carrito
     $('.remove-from-cart').click(function() {
         const productId = $(this).data('id');
         const size = $(this).data('size');
@@ -136,7 +135,7 @@ function updateCart() {
         updateCart();
     });
 
-    // Actualización de los totales del carrito
+    // total carrito
     $('#cart-count').text(totalItems);
 
     const shippingCost = total > 100 ? 0 : 7.95;
@@ -144,11 +143,11 @@ function updateCart() {
     $('#shipping-cost').text(shippingCost.toFixed(2));
     $('#total-pay').text((total + shippingCost).toFixed(2));
 
-    // Guardar el estado del carrito en localStorage
+    // Guardar en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Función para proceder al pago
+// Función finalizar compra
 function checkout() {
     Swal.fire({
         title: '¿Estás seguro?',
@@ -173,7 +172,7 @@ function checkout() {
     });
 }
 
-// Función para vaciar el carrito
+// Función vaciar el carrito
 function emptyCart() {
     cart.length = 0;
     updateCart();
