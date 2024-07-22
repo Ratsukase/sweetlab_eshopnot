@@ -1,21 +1,15 @@
-const products = [
-    { id: 1, name: 'Tarta nude', image: '../Multimedia/Imagenes/Tartas/creaciones/nude.png', prices: { small: 30, medium: 45, large: 70 } },
-    { id: 2, name: 'Tarta Cartoon', image: '../Multimedia/Imagenes/Tartas/creaciones/cartoon.png', prices: { small: 55, medium: 75, large: 105 } },
-    { id: 3, name: 'Tarta sorpresa', image: '../Multimedia/Imagenes/Tartas/creaciones/duotono sorpresa.png', prices: { small: 45, medium: 65, large: 80 } },
-    { id: 4, name: 'Tarta naranja chocolate', image: '../Multimedia/Imagenes/Tartas/creaciones/naranja.png', prices: { small: 30, medium: 45, large: 70 } },
-    { id: 5, name: 'Semifrio mango', image: '../Multimedia/Imagenes/Tartas/creaciones/entremet mango entero.png', prices: { small: 25, medium: 40, large: 60 } },
-    { id: 6, name: 'Semifrío frutos rojos', image: '../Multimedia/Imagenes/Tartas/creaciones/entremet frutos rojos entero.png', prices: { small: 25, medium: 40, large: 60 } },
-    { id: 7, name: 'Dripcake', image: '../Multimedia/Imagenes/Tartas/creaciones/dripcake.jpg', prices: { small: 59, medium: 68, large: 75 } },
-    { id: 8, name: 'Tarta unicornio', image: '../Multimedia/Imagenes/Tartas/creaciones/unicornio.png', prices: { small: 45, medium: 65, large: 80 } },
-    { id: 9, name: 'Tarta red velvet', image: '../Multimedia/Imagenes/Tartas/creaciones/redvelvet1.png', prices: { small: 30, medium: 45, large: 70 } },
-];
+let productos = [];
+
+fetch("./javascript/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        loadProducts(productos);
+    });
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 $(document).ready(function() {
-    loadProducts();
-
-    // Llamar a updateCart al cargar la página para mostrar el carrito actual
     updateCart();
 
     $('#cart-button').click(function() {
@@ -39,8 +33,9 @@ $(document).ready(function() {
     });
 });
 
-function loadProducts() {
+function loadProducts(products) {
     const productList = $('#product-list');
+    productList.empty(); // Limpiar el contenido previo
     products.forEach(product => {
         const productCard = `
             <div class="col-md-4 mb-4">
@@ -82,11 +77,11 @@ function updateCart() {
     const cartItems = $('#cart-items');
     cartItems.empty();
     let total = 0;
-    let totalItems = 0; // Para contar el número total de productos
+    let totalItems = 0; 
 
     cart.forEach(item => {
         total += item.price * item.quantity;
-        totalItems += item.quantity; // Sumar la cantidad de cada producto al total
+        totalItems += item.quantity;
         const cartItem = `
             <li class="list-group-item">
                 ${item.name} - ${item.size} 
@@ -128,26 +123,61 @@ function updateCart() {
         updateCart();
     });
 
-    $('#cart-count').text(totalItems); // Mostrar el número total de productos en el carrito
+    $('#cart-count').text(totalItems); 
 
     const shippingCost = total > 100 ? 0 : 7.95;
     $('#cart-total').text(total.toFixed(2));
     $('#shipping-cost').text(shippingCost.toFixed(2));
     $('#total-pay').text((total + shippingCost).toFixed(2));
 
-    // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 function checkout() {
-    cart.length = 0; // Vaciar el carrito
-    updateCart();
-    $('#thank-you-modal').modal('show');
-    localStorage.removeItem('cart'); // Eliminar el carrito del localStorage
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "Vas a proceder al checkout de tu carrito.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, proceder',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Enviar los datos del carrito al servidor
+            fetch('/api/checkout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cart)
+            })
+            .then(response => response.json())
+            .then(data => {
+                Swal.fire(
+                    '¡Gracias!',
+                    'Tu compra ha sido realizada con éxito.',
+                    'success'
+                );
+                cart.length = 0;
+                updateCart();
+                localStorage.removeItem('cart');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire(
+                    'Error',
+                    'Hubo un problema con tu compra. Inténtalo de nuevo.',
+                    'error'
+                );
+            });
+        }
+    });
 }
 
 function emptyCart() {
-    cart.length = 0; // Vaciar el carrito
+    cart.length = 0;
     updateCart();
-    localStorage.removeItem('cart'); // Eliminar el carrito del localStorage
+    localStorage.removeItem('cart');
 }
