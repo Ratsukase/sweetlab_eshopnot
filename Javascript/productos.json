@@ -2,7 +2,7 @@
     { 
         "id": 1, 
         "name": "Tarta nude", 
-        "image": "../Multimedia/Imagenes/Tartas/creaciones/nude.png", 
+        "image": "./Multimedia/Imagenes/Tartas/creaciones/nude.png", 
         "prices": { "small": 30, "medium": 45, "large": 70 } 
     },
     { 
