@@ -1,6 +1,6 @@
 let productos = [];
 
-fetch("./javascript/productos.json")
+fetch("../javascript/productos.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
@@ -136,42 +136,23 @@ function updateCart() {
 function checkout() {
     Swal.fire({
         title: '¿Estás seguro?',
-        text: "Vas a proceder al checkout de tu carrito.",
+        text: "Vas a proceder a finalizar tu compra.",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Sí, proceder',
+        confirmButtonText: 'Sí, comprar',
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Enviar los datos del carrito al servidor
-            fetch('/api/checkout', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(cart)
-            })
-            .then(response => response.json())
-            .then(data => {
-                Swal.fire(
-                    '¡Gracias!',
-                    'Tu compra ha sido realizada con éxito.',
-                    'success'
-                );
-                cart.length = 0;
-                updateCart();
-                localStorage.removeItem('cart');
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                Swal.fire(
-                    'Error',
-                    'Hubo un problema con tu compra. Inténtalo de nuevo.',
-                    'error'
-                );
-            });
+            Swal.fire(
+                '¡Gracias!',
+                'Tu compra ha sido realizada con éxito.',
+                'success'
+            );
+            cart.length = 0;
+            updateCart();
+            localStorage.removeItem('cart');
         }
     });
 }

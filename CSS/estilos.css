@@ -316,7 +316,7 @@ h1 {
   width: 100%;
   height: auto;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
@@ -514,4 +514,14 @@ h1 {
 }
 .card-body select::-ms-expand {
   display: none; 
+}
+
+.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel {
+  border-radius: 20px; 
+}
+
+#cart-modal {
+  background-color: #fabbfa; /* Cambia este valor al color que desees */
+  border-radius: 10px; /* Opcional: para redondear los bordes del carrito */
+  padding: 20px
 }
