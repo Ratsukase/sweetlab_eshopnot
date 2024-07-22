@@ -1,6 +1,6 @@
 let productos = [];
 
-fetch("https://ratsukase.github.io/sweetlab_eshop/Javascript/productos.json")
+fetch("./Javascript/productos.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
