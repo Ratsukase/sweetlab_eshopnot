@@ -2,55 +2,55 @@
     { 
         "id": 1, 
         "name": "Tarta nude", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/nude.png", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/nude.png", 
         "prices": { "small": 30, "medium": 45, "large": 70 } 
     },
     { 
         "id": 2, 
         "name": "Tarta Cartoon", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/cartoon.png", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/cartoon.png", 
         "prices": { "small": 55, "medium": 75, "large": 105 } 
     },
     { 
         "id": 3, 
         "name": "Tarta sorpresa", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/duotono sorpresa.png", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/duotono sorpresa.png", 
         "prices": { "small": 45, "medium": 65, "large": 80 } 
     },
     { 
         "id": 4, 
         "name": "Tarta naranja chocolate", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/naranja.png", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/naranja.png", 
         "prices": { "small": 30, "medium": 45, "large": 70 } 
     },
     { 
         "id": 5, 
         "name": "Semifrio mango", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/entremet mango entero.png", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/entremet mango entero.png", 
         "prices": { "small": 25, "medium": 40, "large": 60 } 
     },
     { 
         "id": 6, 
         "name": "Semifrío frutos rojos", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/entremet frutos rojos entero.png", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/entremet frutos rojos entero.png", 
         "prices": { "small": 25, "medium": 40, "large": 60 } 
     },
     { 
         "id": 7, 
         "name": "Dripcake", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/dripcake.jpg", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/dripcake.jpg", 
         "prices": { "small": 59, "medium": 68, "large": 75 } 
     },
     { 
         "id": 8, 
         "name": "Tarta unicornio", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/unicornio.png", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/unicornio.png", 
         "prices": { "small": 45, "medium": 65, "large": 80 } 
     },
     { 
         "id": 9, 
         "name": "Tarta red velvet", 
-        "image": "../Multimedia/imagenes/Tartas/creaciones/redvelvet1.png", 
+        "image": "../Multimedia/Imagenes/Tartas/creaciones/redvelvet1.png", 
         "prices": { "small": 30, "medium": 45, "large": 70 } 
     }
 ]
